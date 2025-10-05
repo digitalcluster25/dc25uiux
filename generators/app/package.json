@@ -1,0 +1,33 @@
+{
+  "name": "generator-dc25-uiux",
+  "version": "1.0.0",
+  "description": "Yeoman generator for DC25 UI/UX components",
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "react",
+    "typescript",
+    "components",
+    "ui",
+    "ux",
+    "dc25"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/yeoman-generator": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dc25/uiux.git",
+    "directory": "generators/app"
+  },
+  "author": "DC25 Team",
+  "license": "MIT"
+}

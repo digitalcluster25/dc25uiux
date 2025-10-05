@@ -1,0 +1,155 @@
+import React from 'react';
+import { cn } from '@/utils/cn';
+<% if (withHooks) { %>
+import { <%= hookName %> } from '@/hooks/<%= hookName %>';
+<% } %>
+
+<% if (withProps) { %>
+export interface <%= propsInterface %> {
+  className?: string;
+  children?: React.ReactNode;
+  label?: string;
+  placeholder?: string;
+  value?: string;
+  onChange?: (value: string) => void;
+  error?: string;
+  required?: boolean;
+  disabled?: boolean;
+  // Add your props here
+}
+<% } %>
+
+<% if (withVariants) { %>
+export interface <%= variantsInterface %> {
+  variant?: 'default' | 'filled' | 'outlined' | 'underlined';
+  size?: 'sm' | 'md' | 'lg';
+  state?: 'default' | 'error' | 'success' | 'warning';
+}
+<% } %>
+
+<% if (withProps && withVariants) { %>
+export interface <%= componentName %>Props extends <%= variantsInterface %> {
+  className?: string;
+  children?: React.ReactNode;
+  label?: string;
+  placeholder?: string;
+  value?: string;
+  onChange?: (value: string) => void;
+  error?: string;
+  required?: boolean;
+  disabled?: boolean;
+  // Add your props here
+}
+<% } else if (withProps) { %>
+export interface <%= componentName %>Props {
+  className?: string;
+  children?: React.ReactNode;
+  label?: string;
+  placeholder?: string;
+  value?: string;
+  onChange?: (value: string) => void;
+  error?: string;
+  required?: boolean;
+  disabled?: boolean;
+  // Add your props here
+}
+<% } %>
+
+export default function <%= componentName %>({ 
+  className,
+  children,
+  label,
+  placeholder,
+  value,
+  onChange,
+  error,
+  required = false,
+  disabled = false,
+  <% if (withVariants) { %>
+  variant = 'default',
+  size = 'md',
+  state = 'default',
+  <% } %>
+  ...props 
+}: <%= withProps ? `${componentName}Props` : 'React.HTMLAttributes<HTMLDivElement>' %>) {
+  <% if (withHooks) { %>
+  const { /* Add your hook values here */ } = <%= hookName %>({
+    // Add your hook options here
+  });
+  <% } %>
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onChange?.(e.target.value);
+  };
+
+  return (
+    <div
+      data-testid="<%= componentName.toLowerCase() %>"
+      className={cn(
+        'space-y-2',
+        className
+      )}
+      {...props}
+    >
+      {label && (
+        <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+          {label}
+          {required && <span className="text-destructive ml-1">*</span>}
+        </label>
+      )}
+      
+      <div className="relative">
+        <input
+          className={cn(
+            // Base styles
+            'flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm',
+            'ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium',
+            'placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2',
+            'focus-visible:ring-ring focus-visible:ring-offset-2',
+            'disabled:cursor-not-allowed disabled:opacity-50',
+            <% if (withVariants) { %>
+            // Variant styles
+            {
+              'border-input bg-background': variant === 'default',
+              'border-transparent bg-muted': variant === 'filled',
+              'border-2 bg-transparent': variant === 'outlined',
+              'border-0 border-b-2 rounded-none bg-transparent': variant === 'underlined',
+            },
+            // Size styles
+            {
+              'h-8 px-2 text-xs': size === 'sm',
+              'h-10 px-3 text-sm': size === 'md',
+              'h-12 px-4 text-base': size === 'lg',
+            },
+            // State styles
+            {
+              'border-input': state === 'default',
+              'border-destructive focus-visible:ring-destructive': state === 'error',
+              'border-green-500 focus-visible:ring-green-500': state === 'success',
+              'border-yellow-500 focus-visible:ring-yellow-500': state === 'warning',
+            },
+            <% } else { %>
+            // Default styles
+            'h-10 px-3 text-sm',
+            <% } %>
+            // Error state
+            {
+              'border-destructive focus-visible:ring-destructive': error,
+            }
+          )}
+          placeholder={placeholder}
+          value={value}
+          onChange={handleChange}
+          required={required}
+          disabled={disabled}
+        />
+      </div>
+      
+      {error && (
+        <p className="text-sm text-destructive">{error}</p>
+      )}
+      
+      {children}
+    </div>
+  );
+}

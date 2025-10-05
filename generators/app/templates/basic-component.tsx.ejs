@@ -1,0 +1,72 @@
+import React from 'react';
+import { cn } from '@/utils/cn';
+
+<% if (withProps) { %>
+export interface <%= propsInterface %> {
+  className?: string;
+  children?: React.ReactNode;
+  // Add your props here
+}
+<% } %>
+
+<% if (withVariants) { %>
+export interface <%= variantsInterface %> {
+  variant?: 'default' | 'primary' | 'secondary';
+  size?: 'sm' | 'md' | 'lg';
+}
+<% } %>
+
+<% if (withProps && withVariants) { %>
+export interface <%= componentName %>Props extends <%= variantsInterface %> {
+  className?: string;
+  children?: React.ReactNode;
+  // Add your props here
+}
+<% } else if (withProps) { %>
+export interface <%= componentName %>Props {
+  className?: string;
+  children?: React.ReactNode;
+  // Add your props here
+}
+<% } %>
+
+export default function <%= componentName %>({ 
+  className,
+  children,
+  <% if (withVariants) { %>
+  variant = 'default',
+  size = 'md',
+  <% } %>
+  ...props 
+}: <%= withProps ? `${componentName}Props` : 'React.HTMLAttributes<HTMLDivElement>' %>) {
+  return (
+    <div
+      data-testid="<%= componentName.toLowerCase() %>"
+      className={cn(
+        // Base styles
+        'inline-flex items-center justify-center',
+        <% if (withVariants) { %>
+        // Variant styles
+        {
+          'bg-primary text-primary-foreground': variant === 'primary',
+          'bg-secondary text-secondary-foreground': variant === 'secondary',
+          'bg-background text-foreground': variant === 'default',
+        },
+        // Size styles
+        {
+          'h-8 px-3 text-sm': size === 'sm',
+          'h-10 px-4 text-base': size === 'md',
+          'h-12 px-6 text-lg': size === 'lg',
+        },
+        <% } else { %>
+        // Default styles
+        'h-10 px-4 text-base',
+        <% } %>
+        className
+      )}
+      {...props}
+    >
+      {children || '<%= componentName %>'}
+    </div>
+  );
+}
