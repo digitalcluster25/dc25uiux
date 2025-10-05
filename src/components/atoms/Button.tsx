@@ -1,0 +1,81 @@
+import React from 'react';
+import { cn } from '../../lib/utils';
+
+export interface ButtonVariants {
+  variant?: 'default' | 'primary' | 'secondary' | 'destructive' | 'outline' | 'ghost';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  shape?: 'default' | 'rounded' | 'pill';
+}
+
+export interface ButtonProps extends ButtonVariants {
+  className?: string;
+  children?: React.ReactNode;
+  disabled?: boolean;
+  loading?: boolean;
+  onClick?: () => void;
+}
+
+export default function Button({ 
+  className,
+  children,
+  
+  variant = 'default',
+  size = 'md',
+  shape = 'default',
+  
+  disabled = false,
+  loading = false,
+  ...props 
+}: ButtonProps) {
+
+  return (
+    <div
+      data-testid="button"
+      className={cn(
+        // Base styles
+        'inline-flex items-center justify-center transition-colors',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+        'disabled:pointer-events-none disabled:opacity-50',
+        
+        // Variant styles
+        {
+          'bg-primary text-primary-foreground hover:bg-primary/90': variant === 'primary',
+          'bg-secondary text-secondary-foreground hover:bg-secondary/80': variant === 'secondary',
+          'bg-destructive text-destructive-foreground hover:bg-destructive/90': variant === 'destructive',
+          'border border-input bg-background hover:bg-accent hover:text-accent-foreground': variant === 'outline',
+          'hover:bg-accent hover:text-accent-foreground': variant === 'ghost',
+          'bg-background text-foreground': variant === 'default',
+        },
+        // Size styles
+        {
+          'h-8 px-3 text-sm': size === 'sm',
+          'h-10 px-4 text-base': size === 'md',
+          'h-12 px-6 text-lg': size === 'lg',
+          'h-14 px-8 text-xl': size === 'xl',
+        },
+        // Shape styles
+        {
+          'rounded-md': shape === 'default',
+          'rounded-lg': shape === 'rounded',
+          'rounded-full': shape === 'pill',
+        },
+        
+        // Default styles
+        'h-10 px-4 text-base rounded-md',
+        
+        // State styles
+        {
+          'opacity-50 cursor-not-allowed': disabled,
+          'animate-pulse': loading,
+        },
+        className
+      )}
+      {...props}
+    >
+      {loading && (
+        <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+      )}
+      {children || 'Button'}
+    </div>
+  );
+}
