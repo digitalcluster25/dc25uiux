@@ -1,0 +1,522 @@
+{
+  "components": [
+    {
+      "id": "accordion",
+      "name": "Accordion",
+      "description": "Аккордеон для сворачиваемого контента",
+      "category": "layout",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "alert",
+      "name": "Alert",
+      "description": "Уведомления и предупреждения",
+      "category": "feedback",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "alert-dialog",
+      "name": "Alert Dialog",
+      "description": "Диалоговые окна с подтверждением",
+      "category": "overlay",
+      "installed": false,
+      "dependencies": [
+        "button"
+      ]
+    },
+    {
+      "id": "aspect-ratio",
+      "name": "Aspect Ratio",
+      "description": "Контроль соотношения сторон",
+      "category": "layout",
+      "installed": false,
+      "dependencies": []
+    },
+    {
+      "id": "avatar",
+      "name": "Avatar",
+      "description": "Аватары пользователей",
+      "category": "display",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "badge",
+      "name": "Badge",
+      "description": "Метки и значки",
+      "category": "display",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "breadcrumb",
+      "name": "Breadcrumb",
+      "description": "Навигационные хлебные крошки",
+      "category": "navigation",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "button",
+      "name": "Button",
+      "description": "Кнопки различных стилей",
+      "category": "form",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "calendar",
+      "name": "Calendar",
+      "description": "Календарь для выбора дат",
+      "category": "form",
+      "installed": true,
+      "dependencies": [
+        "button"
+      ]
+    },
+    {
+      "id": "card",
+      "name": "Card",
+      "description": "Карточки для контента",
+      "category": "layout",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "carousel",
+      "name": "Carousel",
+      "description": "Карусель изображений",
+      "category": "display",
+      "installed": false,
+      "dependencies": [
+        "button"
+      ]
+    },
+    {
+      "id": "chart",
+      "name": "Chart",
+      "description": "Графики и диаграммы",
+      "category": "display",
+      "installed": false,
+      "dependencies": []
+    },
+    {
+      "id": "checkbox",
+      "name": "Checkbox",
+      "description": "Чекбоксы для выбора",
+      "category": "form",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "collapsible",
+      "name": "Collapsible",
+      "description": "Сворачиваемые элементы",
+      "category": "layout",
+      "installed": false,
+      "dependencies": []
+    },
+    {
+      "id": "combobox",
+      "name": "Combobox",
+      "description": "Комбинированный список",
+      "category": "form",
+      "installed": false,
+      "dependencies": [
+        "button",
+        "command"
+      ]
+    },
+    {
+      "id": "command",
+      "name": "Command",
+      "description": "Командная палитра",
+      "category": "form",
+      "installed": true,
+      "dependencies": [
+        "dialog"
+      ]
+    },
+    {
+      "id": "context-menu",
+      "name": "Context Menu",
+      "description": "Контекстное меню",
+      "category": "overlay",
+      "installed": false,
+      "dependencies": [
+        "dropdown-menu"
+      ]
+    },
+    {
+      "id": "data-table",
+      "name": "Data Table",
+      "description": "Таблицы данных",
+      "category": "display",
+      "installed": false,
+      "dependencies": [
+        "table",
+        "button",
+        "input"
+      ]
+    },
+    {
+      "id": "date-picker",
+      "name": "Date Picker",
+      "description": "Выбор даты",
+      "category": "form",
+      "installed": false,
+      "dependencies": [
+        "calendar",
+        "popover"
+      ]
+    },
+    {
+      "id": "dialog",
+      "name": "Dialog",
+      "description": "Диалоговые окна",
+      "category": "overlay",
+      "installed": true,
+      "dependencies": [
+        "button"
+      ]
+    },
+    {
+      "id": "drawer",
+      "name": "Drawer",
+      "description": "Выдвижные панели",
+      "category": "overlay",
+      "installed": false,
+      "dependencies": [
+        "button"
+      ]
+    },
+    {
+      "id": "dropdown-menu",
+      "name": "Dropdown Menu",
+      "description": "Выпадающие меню",
+      "category": "overlay",
+      "installed": true,
+      "dependencies": [
+        "button"
+      ]
+    },
+    {
+      "id": "empty",
+      "name": "Empty",
+      "description": "Пустые состояния",
+      "category": "feedback",
+      "installed": false,
+      "dependencies": []
+    },
+    {
+      "id": "form",
+      "name": "Form",
+      "description": "Формы с валидацией",
+      "category": "form",
+      "installed": true,
+      "dependencies": [
+        "input",
+        "button"
+      ]
+    },
+    {
+      "id": "hover-card",
+      "name": "Hover Card",
+      "description": "Карточки при наведении",
+      "category": "overlay",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "input",
+      "name": "Input",
+      "description": "Поля ввода",
+      "category": "form",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "input-otp",
+      "name": "Input OTP",
+      "description": "OTP поля ввода",
+      "category": "form",
+      "installed": false,
+      "dependencies": [
+        "input"
+      ]
+    },
+    {
+      "id": "kbd",
+      "name": "Kbd",
+      "description": "Клавиатурные сочетания",
+      "category": "display",
+      "installed": false,
+      "dependencies": []
+    },
+    {
+      "id": "label",
+      "name": "Label",
+      "description": "Метки для полей",
+      "category": "form",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "menubar",
+      "name": "Menubar",
+      "description": "Меню-бар",
+      "category": "navigation",
+      "installed": true,
+      "dependencies": [
+        "dropdown-menu"
+      ]
+    },
+    {
+      "id": "navigation-menu",
+      "name": "Navigation Menu",
+      "description": "Навигационное меню",
+      "category": "navigation",
+      "installed": true,
+      "dependencies": [
+        "button"
+      ]
+    },
+    {
+      "id": "pagination",
+      "name": "Pagination",
+      "description": "Пагинация",
+      "category": "navigation",
+      "installed": true,
+      "dependencies": [
+        "button"
+      ]
+    },
+    {
+      "id": "popover",
+      "name": "Popover",
+      "description": "Всплывающие окна",
+      "category": "overlay",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "progress",
+      "name": "Progress",
+      "description": "Индикаторы прогресса",
+      "category": "feedback",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "radio-group",
+      "name": "Radio Group",
+      "description": "Группы радиокнопок",
+      "category": "form",
+      "installed": true,
+      "dependencies": [
+        "label"
+      ]
+    },
+    {
+      "id": "resizable",
+      "name": "Resizable",
+      "description": "Изменяемые размеры",
+      "category": "layout",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "scroll-area",
+      "name": "Scroll Area",
+      "description": "Области прокрутки",
+      "category": "layout",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "select",
+      "name": "Select",
+      "description": "Выпадающие списки",
+      "category": "form",
+      "installed": true,
+      "dependencies": [
+        "button"
+      ]
+    },
+    {
+      "id": "separator",
+      "name": "Separator",
+      "description": "Разделители",
+      "category": "layout",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "sheet",
+      "name": "Sheet",
+      "description": "Боковые панели",
+      "category": "overlay",
+      "installed": true,
+      "dependencies": [
+        "button"
+      ]
+    },
+    {
+      "id": "sidebar",
+      "name": "Sidebar",
+      "description": "Боковая панель",
+      "category": "layout",
+      "installed": false,
+      "dependencies": [
+        "button",
+        "scroll-area"
+      ]
+    },
+    {
+      "id": "skeleton",
+      "name": "Skeleton",
+      "description": "Скелетоны загрузки",
+      "category": "feedback",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "slider",
+      "name": "Slider",
+      "description": "Слайдеры значений",
+      "category": "form",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "sonner",
+      "name": "Sonner",
+      "description": "Уведомления Sonner",
+      "category": "feedback",
+      "installed": false,
+      "dependencies": []
+    },
+    {
+      "id": "spinner",
+      "name": "Spinner",
+      "description": "Спиннеры загрузки",
+      "category": "feedback",
+      "installed": false,
+      "dependencies": []
+    },
+    {
+      "id": "switch",
+      "name": "Switch",
+      "description": "Переключатели",
+      "category": "form",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "table",
+      "name": "Table",
+      "description": "Таблицы",
+      "category": "display",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "tabs",
+      "name": "Tabs",
+      "description": "Вкладки",
+      "category": "navigation",
+      "installed": true,
+      "dependencies": [
+        "button"
+      ]
+    },
+    {
+      "id": "textarea",
+      "name": "Textarea",
+      "description": "Многострочные поля",
+      "category": "form",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "toast",
+      "name": "Toast",
+      "description": "Тосты уведомлений",
+      "category": "feedback",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "toggle",
+      "name": "Toggle",
+      "description": "Переключатели",
+      "category": "form",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "toggle-group",
+      "name": "Toggle Group",
+      "description": "Группы переключателей",
+      "category": "form",
+      "installed": false,
+      "dependencies": [
+        "toggle"
+      ]
+    },
+    {
+      "id": "tooltip",
+      "name": "Tooltip",
+      "description": "Всплывающие подсказки",
+      "category": "overlay",
+      "installed": true,
+      "dependencies": []
+    },
+    {
+      "id": "typography",
+      "name": "Typography",
+      "description": "Типографика",
+      "category": "display",
+      "installed": false,
+      "dependencies": []
+    },
+    {
+      "id": "testbutton",
+      "name": "TestButton",
+      "category": "atoms",
+      "description": "TestButton component generated by script",
+      "tags": [
+        "atom",
+        "basic"
+      ],
+      "installed": true,
+      "props": [
+        "TestButtonProps"
+      ],
+      "variants": [],
+      "hooks": []
+    },
+    {
+      "id": "flex",
+      "name": "Flex",
+      "category": "molecules",
+      "description": "Flex component generated by script",
+      "tags": [
+        "molecule",
+        "layout"
+      ],
+      "installed": true,
+      "props": [
+        "FlexProps"
+      ],
+      "variants": [
+        "FlexVariants"
+      ],
+      "hooks": [
+        "useFlex"
+      ]
+    }
+  ]
+}

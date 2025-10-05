@@ -1,0 +1,15 @@
+// Экспорт всех form компонентов для динамической загрузки
+export { Button } from './button'
+export { Calendar } from './calendar'
+export { Checkbox } from './checkbox'
+export { Command, CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator, CommandShortcut } from './command'
+export { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, useFormField } from './form'
+export { Input } from './input'
+export { Label } from './label'
+export { RadioGroup, RadioGroupItem } from './radio-group'
+export { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './select'
+export { Slider } from './slider'
+export { Switch } from './switch'
+export { Textarea } from './textarea'
+export { Toggle } from './toggle'
+
