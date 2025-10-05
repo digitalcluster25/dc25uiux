@@ -38,7 +38,16 @@
     "release:minor": "node scripts/release.js minor",
     "release:major": "node scripts/release.js major",
     "release:check": "node scripts/release.js check",
-    "release:dry": "node scripts/release.js dry-run"
+    "release:dry": "node scripts/release.js dry-run",
+    "version:history": "node scripts/version-manager.js history",
+    "version:changes": "node scripts/version-manager.js changes",
+    "version:suggest": "node scripts/version-manager.js suggest",
+    "version:current": "node scripts/version-manager.js current",
+    "generate:component": "node scripts/generate-component.js",
+    "generate:atom": "node scripts/generate-component.js --type=atom",
+    "generate:molecule": "node scripts/generate-component.js --type=molecule",
+    "generate:organism": "node scripts/generate-component.js --type=organism",
+    "generate:yo": "yo dc25-uiux"
   },
   "config": {
     "commitizen": {
@@ -130,7 +139,9 @@
     "vite": "^5.4.20",
     "vite-plugin-pwa": "^1.0.3",
     "vitest": "^3.2.4",
-    "workbox-window": "^7.3.0"
+    "workbox-window": "^7.3.0",
+    "yeoman-generator": "^7.5.1",
+    "yo": "^5.1.0"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -162,6 +173,7 @@
     "date-fns": "^4.1.0",
     "express": "^4.18.2",
     "lucide-react": "^0.294.0",
+    "openai": "^6.1.0",
     "react": "^18.0.0",
     "react-day-picker": "^9.11.0",
     "react-dom": "^18.0.0",
