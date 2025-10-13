@@ -119,7 +119,7 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.0.0",
-    "eslint-plugin-react-hooks": "^4.0.0",
+    "eslint-plugin-react-hooks": "^7.0.0",
     "eslint-plugin-storybook": "^9.1.10",
     "husky": "^9.1.7",
     "jsdom": "^27.0.0",
